@@ -1,0 +1,205 @@
+//Let us rock and roll
+import java.util.Scanner;
+class Attendance
+{
+    private String id;
+    private String name;
+    private String classr;
+    private String collegeid;
+    private String  college;
+    private String  attendance;
+    
+    Scanner sc=new Scanner(System.in);
+    //METHOD TO FACULTY
+     void  facultydetails()
+    {
+        System.out.println("-------********  FACULTY ATTENDENCE MANAGEMENT SYSTEM  ********------");
+        System.out.println("       Enter faculty id number👍          :         ");
+        id=sc.nextLine();
+        System.out.println("       Enter Name of the faculty😎:       ");
+        name=sc.nextLine();
+      
+        System.out.println("       Enter name of the college 😊:      ");
+        college=sc.nextLine();
+        System.out.println("       Enter  college id 👍:       ");
+        collegeid=sc.nextLine();
+        System.out.println("       Enter  either faculty is present/absent👍:       ");
+        attendance=sc.nextLine();
+        
+    }
+    //METHOD TO STUDENT
+    void  studentdetails()
+    {
+        System.out.println("-------********  STUDENT ATTENDENCE MANAGEMENT SYSTEM  ********------");
+        System.out.println("       Enter student id number👍          :         ");
+        id=sc.nextLine();
+        System.out.println("       Enter Name of the student😊😎:       ");
+        name=sc.nextLine();
+        System.out.println("       Enter class of the student👌 :       ");
+        classr=sc.nextLine();
+        System.out.println("       Enter name of the college 😍 :     ");
+        college=sc.nextLine();
+        System.out.println("       Enter  either student is present/absent👍 :       ");
+        attendance=sc.nextLine();
+        
+    }
+    
+     //METHOD TO DISPLAY THE FACULTY DETAILS
+    void details()
+    {
+        System.out.println("------DETAILS OF THE FACULTY😊------- ");
+        System.out.println("       ");
+        System.out.println("      FACULTY ID               :  "+id);
+        System.out.println("      FACULTY NAME             :  "+name);
+        System.out.println("      FACULTY COLLEGE NAME     :  "+college);
+        System.out.println("      FACULTY COLLEGE ID       :  "+collegeid);
+        System.out.println("      FACULTY STATUS           :  "+attendance);
+        
+        System.out.println(" ");
+    }
+    //METHOD TO DISPLAY THE STUDENT DETAILS
+    void detail()
+    {
+        System.out.println("------DETAILS OF THE STUDENT😊------- ");
+        System.out.println("       ");
+        System.out.println("      STUDENT ID      :  "+id);
+        System.out.println("      STUDENT NAME    :  "+name);
+        System.out.println("      STUDENT CLASS   :  "+classr);
+        System.out.println("      COLLEGE NAME    :  "+college);
+        System.out.println("      STUDENT STATUS  :  "+attendance);
+        System.out.println(" ");
+    }
+    
+}
+    
+//MAIN METHOD
+public class Project3
+{
+    public static void main(String args[])
+    {
+        
+        Scanner sc1=new Scanner(System.in);
+    
+        System.out.println( "               ❤️‍---ATTENDANCE MANAGEMENT SYSTEM-------❤️‍    "   );
+         System.out.println("");
+        System.out.println("--------------👍Make sure to attend the college every day👍------------");
+        
+        System.out.println("");
+        System.out.println("");
+        System.out.println("               CHOOSE EITHER YOU ARE FACULTY  (OR) STUDENT 😍          ");
+        
+        System.out.println(" ");
+      
+        System.out.println("                    MARK ATENDANCE ONLY ONE AT A TIME                   ");
+         
+        System.out.println(" ");
+        System.out.println(" ");
+        System.out.println("MAIN MENU : \n           1.FACULTY  \n           2.STUDENT  ");
+        int c=sc1.nextInt();
+        Attendance m[]=new Attendance[c];
+          int i,a;
+        for(i=0;i<c;i++)
+        {
+        if(c==1)
+        {
+                    System.out.println("       No.of faculties:  //choose  1 only 👍  ");//only one at a time
+                    a=sc1.nextInt();
+                   
+                   
+                    for(i=0;i<a;i++)
+                   {
+                    m[i]=new Attendance();
+                    m[i].facultydetails();
+                    }
+        }
+        else if(c==2)
+        {
+                   System.out.println("        No.of students:   //choose 1 only 👍  ");//only one at a time
+                     a=sc1.nextInt();
+
+                    for(i=0;i<a;i++)
+                   {
+                    m[i]=new Attendance();
+                    m[i].studentdetails();
+                    }
+                   
+         }
+        }
+
+         
+         int n;
+         do{
+         System.out.println(" ");
+          System.out.println(" ");
+          System.out.println("CHOOSE SPECIFIC OPTION FOR SPECIFIC TASK");
+          System.out.println("   MAIN MENU:        \n 1.FACULTY DETAILS 👍         \n 2.STUDENT DETAILS 😍           \n 3.FINE👍\n 4.EXIT"    );
+          System.out.println(" ");
+          System.out.println(" ");
+          
+         n=sc1.nextInt();
+        
+        switch(n)
+        {
+           
+        
+              case 1:
+                 
+            
+                  for(i=0;i<c;i++)
+                  {
+                    if(c==1)
+                     {
+                    m[i].details();
+                     }
+                     else
+                     {
+                         System.out.println(" "); 
+                         System.out.println("       NO FACULTY IS ENROLLED😒😒   ");
+                          System.out.println(" "); 
+                          
+                     }
+                   break;
+                  }
+                  System.out.println("   come to the college every day make the students happy and knowlegable "); 
+                  break;
+                 
+                  
+            case 2:
+                 
+               
+                 for(i=0;i<c;i++)
+                  {
+                     if(c==2)
+                     {
+                       m[i].detail();
+                      }
+                  
+                   else
+                     {
+                       System.out.println(" ");    
+                       System.out.println("    NO STUDENT IS ENROLLED😒😒   ");
+                       System.out.println(" "); 
+                      
+                     }
+                    break;
+                  }
+                   System.out.println("   IF YOU HAVE LESS THAN 75% ATTENDENCE YOU NEED TO PAY FINE ");
+                       System.out.println("   press 3 to see the fine ");
+                 break;
+            case 3:
+                   System.out.println("--->>   IF YOU HAVE LESS THAN 75% ATTENDENCE YOU NEED TO PAY FINE OF 2000 Rupees🥵");
+                   System.out.println("--->>   IF YOU HAVE LESS THAN 50% YOU ARE TERMINATED FROM THE COLLEGE 🥹🥹");
+                   break;
+            
+             case 4:
+                 
+                   System.out.println("    ❤️ ----HAVE A NICE DAY TAKE CARE ABOUT YOUR FEAUTURE----❤️");
+                   System.out.println("             😊 ATTEND THE COLLEGE EVERY DAY STUDENTS & FACULTY MEMBERS😊        ");
+                   break;
+                     
+                
+        }
+   
+         }while(n!=5);
+    }
+}
